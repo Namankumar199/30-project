@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Hider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row" id="row">
+            <input type="password" id="password">
+            <img id="img" src="eye-icons/eye-close.png" alt="image-close">
+        </div>
+    </div>
+</body>
+<script>
+
+    const password1 = document.getElementById('password');
+    const img = document.getElementById('img');
+
+    img.addEventListener('click', () => {
+
+        if (password1.type == "text") {
+            password1.type = 'password';
+            img.src = 'eye-icons/eye-close.png';
+        } else {
+            password1.type = 'text';
+            img.src = 'eye-icons/eye-open.png';
+        }
+    })
+
+</script>
+
+</html>

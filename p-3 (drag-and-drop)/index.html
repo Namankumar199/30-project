@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DragAndDrop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-box">
+            <div class="list" draggable="true">Task-1</div>
+            <div class="list" draggable="true">Task-2</div>
+            <div class="list" draggable="true">Task-3</div>
+            <div class="list" draggable="true">Task-4</div>
+            <div class="list" draggable="true">Task-5</div>
+        </div>
+        <div class="right-box"></div>
+    </div>
+</body>
+<script>
+    let dragEl = null;
+    const leftBox = document.querySelector('.left-box');
+    const rightBox = document.querySelector('.right-box');
+
+    function addDragListeners(list) {
+        list.addEventListener('dragstart', (e) => {
+            dragEl = e.target;
+            console.log(dragEl);
+        });
+    }
+
+    function saveData() {
+        localStorage.setItem('data1', leftBox.innerHTML);
+        localStorage.setItem('data2', rightBox.innerHTML);
+        console.log(localStorage.getItem('data1'));
+        console.log(localStorage.getItem('data2'));
+    }
+
+    function getData() {
+        leftBox.innerHTML = localStorage.getItem('data1') || '';
+        rightBox.innerHTML = localStorage.getItem('data2') || '';
+
+        document.querySelectorAll('.list').forEach(addDragListeners);
+    }
+
+    // Adding dragover and drop event listeners
+    rightBox.addEventListener('dragover', (e) => {
+        e.preventDefault();
+    });
+
+    rightBox.addEventListener('drop', (e) => {
+        if (dragEl) {
+            rightBox.appendChild(dragEl);
+            dragEl = null;
+            saveData();
+        }
+    });
+
+    leftBox.addEventListener('dragover', (e) => {
+        e.preventDefault();
+    });
+
+    leftBox.addEventListener('drop', (e) => {
+        if (dragEl) {
+            leftBox.appendChild(dragEl);
+            dragEl = null;
+            saveData();
+        }
+    });
+
+    // Initialize the page
+    getData();
+
+    // Add drag listeners to initial items
+    document.querySelectorAll('.list').forEach(addDragListeners);
+
+</script>
+
+</html>

@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*  Add this CSS to style.css */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #212121;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row {
+
+    background-color: aliceblue;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.row input {
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 22px;
+    background: transparent;
+}
+
+
+#img {
+    width: 35px;
+    cursor: pointer;
+}

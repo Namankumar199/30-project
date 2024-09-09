@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.container {
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #212121;
+    gap: 1rem;
+}
+
+.left-box,
+.right-box {
+    width: 250px;
+    padding: 15px 10px;
+    height: 280px;
+    border: 1px dashed #fff;
+}
+
+
+.list {
+    cursor: grabbing;
+    margin-bottom: 5px;
+    padding: 10px 20px;
+    color: #000;
+    font-size: 22px;
+    background-color: greenyellow;
+}

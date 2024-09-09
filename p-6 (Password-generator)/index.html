@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+            <h1>Generate a <br> <span>Random Password</span></h1>
+            <div class="input-box">
+                <input type="text" id="input1">
+                <!-- <input type="number" id="pass-length" placeholder="Enter password length"> -->
+                <img src="images/copy.png" alt="" onclick="copyPassword();">
+            </div>
+            <button onClick="randomPassword();"> <img src="images/generate.png" alt=""> Generate</button>
+        </div>
+    </div>
+</body>
+
+<script>
+
+
+    function randomPassword() {
+        const letterCapital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const letterSmall = "abcdefghijklmnopqrstuvwxyz";
+        const digit = "0123456789";
+        const special = "@#$%^&*()_~{}[]";
+        const allLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*()_~{}[]";
+        let length = 8;
+
+        let pass = []
+        pass += letterCapital[Math.floor(Math.random() * letterCapital.length)];
+        pass += letterSmall[Math.floor(Math.random() * letterSmall.length)];
+        pass += digit[Math.floor(Math.random() * digit.length)];
+        pass += special[Math.floor(Math.random() * special.length)];
+
+        while (length > pass.length) {
+            // console.log(pass.length)
+            pass += allLetter[Math.floor(Math.random() * allLetter.length)];
+        }
+
+        document.getElementById('input1').value = pass;
+        console.log(pass);
+    }
+
+    function copyPassword() {
+        let myInput = document.getElementById('input1');
+        myInput.select();
+        myInput.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(myInput.value);
+    }
+</script>
+
+</html>

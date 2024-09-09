@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #212121;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    width: fit-content;
+    padding: 40px 40px 60px;
+    border-radius: 10px;
+    background-color: aqua;
+    max-width: 500px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img {
+    width: 40px;
+}
+
+
+.input-section {
+    border-radius: 5px 20px 20px 5px;
+    background-color: beige;
+    /* border: 1px solid red; */
+}
+
+.input-section input {
+    font-size: 20px;
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    background-color: transparent !important;
+
+}
+
+.input-section button {
+    font-size: 20px;
+    outline: none;
+    border-radius: 20px;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(18, 227, 70);
+}
+
+.task-section {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+ul li {
+    list-style: none;
+    padding: 0 30px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    padding: 7px 30px;
+    position: relative;
+    font-size: 20px;
+    text-transform: uppercase;
+    max-width: 300px;
+    overflow-x: hidden;
+    /* border: 1px solid red; */
+}
+
+li::before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 1px;
+    color: #000;
+    border-radius: 50%;
+    background: url('images/unchecked.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+}
+
+li.checked::before {
+    background: url('images/checked.png');
+    background-size: cover;
+}
+
+li.checked {
+    text-decoration: line-through;
+}
+
+span {
+    position: absolute;
+    top: 3px;
+    right: 0;
+    border: 1px solid red;
+    font-size: 30px;
+    display: flex;
+    color: red;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: azure;
+    margin: 0;
+    padding: 0;
+}
