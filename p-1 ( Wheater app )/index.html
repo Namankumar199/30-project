@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather -app</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <header>
+        <h2>Weather Information</h2>
+    </header>
+
+    <div class="card">
+        <div class="search-box">
+            <input type="text" id="search-input">
+            <button id="search-btn">      <i class="fa-solid fa-magnifying-glass" id="search"></i>
+            </button>
+        </div>
+
+        <div class="error"> <span> Invalid Value ! </span> </div>
+
+        <div class="weather-box">
+            <div class="location-box">
+                <img src="assests/clouds.png" class="weather-img" alt="weather-img">
+                <h1 class="temp">22°C</h1>
+                <h2 class="place">Delhi</h2>
+            </div>
+            <div class="contents">
+                <div class="humidity">
+                    <img src="assests/humidity.png" alt="">
+                    <div class="data">
+                        <h3 class="humidity-percentage">53%</h3>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="wind">
+                    <img src="assests/wind.png" alt="">
+                    <div class="data">
+                        <h3 class="wind-speed">5.66km/h</h3>
+                        <p>Wind Speed</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
